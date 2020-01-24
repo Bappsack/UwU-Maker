@@ -50,7 +50,6 @@ namespace UwU_Maker.Minigames
             Thread ScreenCap = new Thread(delegate () { ScreenCapEvent(hWnd, rect); });
             ScreenCap.Start();
             await Task.Delay(1000);
-
             // FastMode Timer            
 
             System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();

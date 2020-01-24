@@ -215,6 +215,7 @@ namespace UwU_Maker
             WindowList.Clear();
             listView1.Items.Clear();
             IsStarted = false;
+            PreventSleepMode.ToggleSleepMode(false);
             MessageBox.Show($"{Amount} Bots have been Stopped and removed from List!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -242,6 +243,7 @@ namespace UwU_Maker
                 {
                     Bot.Start();
                 }
+                PreventSleepMode.ToggleSleepMode(true);
                 MessageBox.Show($"{Amount} Bots have been started!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 IsStarted = true;
             }));

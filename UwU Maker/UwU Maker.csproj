@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Helpers\BackgroundHelper.cs" />
     <Compile Include="Helpers\LockBitmap.cs" />
+    <Compile Include="Helpers\PreventSleepMode.cs" />
     <Compile Include="Minigames\FishPond.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
