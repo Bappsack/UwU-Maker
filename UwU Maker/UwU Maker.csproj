@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EA4CB31C-F1F6-45CE-911C-3175C75D43C2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>UwU_Maker</RootNamespace>
+    <AssemblyName>UwU_Maker</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <StartupObject>UwU_Maker.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>UwU_Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\BackgroundHelper.cs" />
+    <Compile Include="Helpers\LockBitmap.cs" />
+    <Compile Include="Minigames\FishPond.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ImageData.cs" />
+    <Compile Include="Helpers\ImageProgessing.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Minigames\Quarry.cs" />
+    <Compile Include="Minigames\SawMill.cs" />
+    <Compile Include="Minigames\ShootingField.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Abort.bmp" />
+    <Content Include="Resources\again_fishpond.bmp" />
+    <Content Include="Resources\again_sawmill.bmp" />
+    <Content Include="Resources\again_stonepit.bmp" />
+    <Content Include="Resources\arrow_down.bmp" />
+    <Content Include="Resources\arrow_left.bmp" />
+    <Content Include="Resources\arrow_right.bmp" />
+    <Content Include="Resources\arrow_up.bmp" />
+    <Content Include="Resources\back.bmp" />
+    <Content Include="Resources\big_start.bmp" />
+    <Content Include="Resources\big_start_home.bmp" />
+    <Content Include="Resources\bounty_again.bmp" />
+    <Content Include="Resources\bounty_fishpond.bmp" />
+    <Content Include="Resources\bounty_sawmill.bmp" />
+    <Content Include="Resources\bounty_stonepit.bmp" />
+    <None Include="Resources\chicken_right.bmp" />
+    <Content Include="Resources\definition_sawmill.bmp" />
+    <Content Include="Resources\definition_stonepit.bmp" />
+    <Content Include="Resources\Failed_FishPod.bmp" />
+    <Content Include="Resources\Failed_FishPond.bmp" />
+    <Content Include="Resources\Failed_SawMill.bmp" />
+    <None Include="Resources\Failed_Stone.bmp" />
+    <Content Include="Resources\Failed_TryAgain.bmp" />
+    <Content Include="Resources\fish_Arrow_Bottom.bmp" />
+    <Content Include="Resources\fish_Arrow_left.bmp" />
+    <Content Include="Resources\fish_Arrow_right.bmp" />
+    <Content Include="Resources\fish_Arrow_top.bmp" />
+    <None Include="Resources\Level5.bmp" />
+    <Content Include="Resources\map_definition.bmp" />
+    <Content Include="Resources\NoPoints.bmp" />
+    <Content Include="Resources\ok_doubler.bmp" />
+    <None Include="Resources\Production_Coupon_Trigger.bmp" />
+    <None Include="Resources\Production_Coupon.bmp" />
+    <Content Include="Resources\Reward_Button.bmp" />
+    <Content Include="Resources\Reward_Button_FishPond.bmp" />
+    <Content Include="Resources\Reward_Button_Quarry.bmp" />
+    <Content Include="Resources\Reward_Button_SawMill.bmp" />
+    <Content Include="Resources\Reward_Button_Stone.bmp" />
+    <None Include="Resources\Reward_FishPond.bmp" />
+    <Content Include="Resources\Reward_SawMill.bmp" />
+    <None Include="Resources\Reward_Stone.bmp" />
+    <Content Include="Resources\sawmill18k.bmp" />
+    <Content Include="Resources\score.bmp" />
+    <Content Include="Resources\score_FishPond.bmp" />
+    <Content Include="Resources\score_recognize.bmp" />
+    <Content Include="Resources\Score_SawMill.bmp" />
+    <Content Include="Resources\Score_Stone.bmp" />
+    <Content Include="Resources\Screenshot_1.bmp" />
+    <Content Include="Resources\Screenshot_2.bmp" />
+    <Content Include="Resources\SpielStart.bmp" />
+    <Content Include="Resources\Start_FishPond.bmp" />
+    <Content Include="Resources\Start_SawMill.bmp" />
+    <None Include="Resources\Start_Stone.bmp" />
+    <Content Include="Resources\start_stonepit.bmp" />
+    <Content Include="Resources\stop.bmp" />
+    <None Include="Resources\Stop_Button.bmp" />
+    <Content Include="Resources\TryAgain.bmp" />
+    <Content Include="Resources\TryAgain.png" />
+    <None Include="Resources\TryAgain_Stone.bmp" />
+    <None Include="Resources\TryAgain_FishPond.bmp" />
+    <Content Include="Resources\Verlassen.bmp" />
+    <Content Include="UwU_Icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
