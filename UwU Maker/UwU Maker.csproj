@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EA4CB31C-F1F6-45CE-911C-3175C75D43C2}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>UwU_Maker</RootNamespace>
     <AssemblyName>UwU_Maker</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
