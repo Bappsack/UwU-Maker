@@ -46,7 +46,7 @@ namespace UwU_Maker.Minigames
                     await BackgroundHelper.SendKey(hWnd, BackgroundHelper.KeyCodes.VK_RIGHT, 5);
                 }
 
-              
+
 
                 await Task.Delay(10);
             }

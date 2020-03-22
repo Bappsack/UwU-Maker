@@ -3,7 +3,6 @@ using System.Drawing;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UwU_Maker;
 
 namespace UwU_Maker.Minigames
 {
@@ -25,6 +24,14 @@ namespace UwU_Maker.Minigames
 
         private int PressTime = 409;
         private int WaitTime = 30;
+        private int Wanted_Level = 5;
+
+        private int[] Level1 = new int[] { 375, 441 };
+        private int[] Level2 = new int[] { 442, 441 };
+        private int[] Level3 = new int[] { 508, 441 };
+        private int[] Level4 = new int[] { 575, 441 };
+        private int[] Level5 = new int[] { 643, 441 };
+        private int[] RewardButton = null;
 
         private Color FishColor = ColorTranslator.FromHtml("#C6F7FF");
         private Color FishCatechedColor = ColorTranslator.FromHtml("#FF0400");
@@ -34,19 +41,20 @@ namespace UwU_Maker.Minigames
         private Color DamonColorLeft = ColorTranslator.FromHtml("#1A2B2E"); // 1a2B2e
         private Color DamonColorLeftLeft = ColorTranslator.FromHtml("#7F1716");
 
-        public async void RunTask(IntPtr hWnd, int Amount, SearchImage.RECT rect, int BotID, bool UseRewardCoupon, bool UseProductionCoupon, int LootTimeA, int LootTimeB, double FailChance)
+        public async void RunTask(IntPtr hWnd, int Amount, int Level, SearchImage.RECT rect, int BotID, bool UseRewardCoupon, bool UseProductionCoupon, int LootTimeA, int LootTimeB, double FailChance, int fishCatchTime)
         {
             Console.WriteLine("FishPond Bot Created for Hwid: {0}, Bot ID: {1}, Times: {2}", hWnd, BotID, Amount);
             IsFinished = true;
             IsFailed = false;
             ProductionNeeded = false;
             Times = 0;
+            Wanted_Level = Level;
             Point Scan;
             System.Timers.Timer FastMode = new System.Timers.Timer();
             FastMode.Elapsed += TriggerFastMode;
             FastMode.Interval += 100000;
             FastMode.AutoReset = false;
-
+            WaitTime = fishCatchTime;
             Thread ScreenCap = new Thread(delegate () { ScreenCapEvent(hWnd, rect); });
             ScreenCap.Start();
             await Task.Delay(1000);
@@ -54,6 +62,29 @@ namespace UwU_Maker.Minigames
 
             System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
 
+
+
+            switch(Wanted_Level)
+            {
+                case 1:
+                    RewardButton = Level1;
+                    break;
+                case 2:
+                    RewardButton = Level2;
+                    break;
+                case 3:
+                    RewardButton = Level3;
+                    break;
+                case 4:
+                    RewardButton = Level4;
+                    break;
+                case 5:
+                    RewardButton = Level5;
+                    break;
+                default:
+                    RewardButton = Level5;
+                    break;
+            }
 
             while (Program.botRunning)
             {
@@ -156,7 +187,7 @@ namespace UwU_Maker.Minigames
                             Console.WriteLine("BOT: " + BotID + "(FishPond): " + " Get Reward!");
                             await Task.Delay(250 + new Random().Next(500, 1500));
                             await Task.Delay(new Random().Next(LootTimeA, LootTimeB));
-                            await BackgroundHelper.SendClick(hWnd, 640,438, 250);
+                            await BackgroundHelper.SendClick(hWnd, 640, 438, 250);
                             await Task.Delay(1000);
                         }
 
@@ -173,12 +204,12 @@ namespace UwU_Maker.Minigames
                         {
                             Console.WriteLine("BOT: " + BotID + "(FishPond): " + "Start Playing!");
                             await Task.Delay(250);
-                            await BackgroundHelper.SendClick(hWnd,514,550, 250);
+                            await BackgroundHelper.SendClick(hWnd, 514, 550, 250);
                             await Task.Delay(2000);
                             FastModeEnabled = false;
                             FastMode.Stop();
                             PressTime = 409;
-                            WaitTime = 20;
+                            WaitTime = fishCatchTime;
                             FastMode.Start();
 
                             stopwatch.Stop();
@@ -210,9 +241,9 @@ namespace UwU_Maker.Minigames
 
                         if (!SearchImage.Find(target, Resources.Level5, out Scan).IsEmpty && !IsFailed)
                         {
-                            Console.WriteLine("BOT: " + BotID + "(FishPond): " + " Get Level 5 Reward!");
+                            Console.WriteLine("BOT: " + BotID + "(FishPond): " + " Get Level " + Wanted_Level + " Reward!");
                             await Task.Delay(250);
-                            await BackgroundHelper.SendClick(hWnd, Scan.X + 10, Scan.Y + 15, 250);
+                            await BackgroundHelper.SendClick(hWnd, RewardButton[0],RewardButton[1], 250);
                             await Task.Delay(1000);
                             if (UseRewardCoupon)
                             {

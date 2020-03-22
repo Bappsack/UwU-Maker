@@ -65,6 +65,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -365,6 +367,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.textBox5);
+            this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.textBox4);
             this.groupBox3.Controls.Add(this.label5);
@@ -442,6 +446,23 @@
             this.textBox2.TabIndex = 0;
             this.textBox2.Text = "500";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 89);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Catch Fish Delay:";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(105, 88);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(45, 20);
+            this.textBox5.TabIndex = 9;
+            this.textBox5.Text = "30";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -506,6 +527,8 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label7;
     }
 }
 

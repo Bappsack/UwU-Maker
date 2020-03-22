@@ -195,7 +195,7 @@ namespace UwU_Maker
             GetWindowRect(hwnd, ref clientPos);
             Point mousePos;
             GetCursorPos(out mousePos);
-            if(mousePos.X > clientPos.Left && mousePos.Y > clientPos.Top && mousePos.X < clientPos.Right && mousePos.Y < clientPos.Bottom && GetForegroundWindow() == hwnd)
+            if (mousePos.X > clientPos.Left && mousePos.Y > clientPos.Top && mousePos.X < clientPos.Right && mousePos.Y < clientPos.Bottom && GetForegroundWindow() == hwnd)
             {
                 //Console.WriteLine("Mouse is in Window, move outside!");
                 SetCursorPos(clientPos.Left - 100, clientPos.Top - 100);

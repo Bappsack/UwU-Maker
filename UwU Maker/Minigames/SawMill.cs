@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Threading.Tasks;
-using UwU_Maker;
 
 namespace UwU_Maker.Minigames
 {
@@ -42,13 +41,13 @@ namespace UwU_Maker.Minigames
                 if (!SearchImage.PixelSearch(SearchImage.GetBitmapArea(target, 425, 399, 475, 449), SawColorLeft).IsEmpty && !IsFinished)
                 {
                     await Task.Delay(10);
-                    BackgroundHelper.SendKey(hWnd, BackgroundHelper.KeyCodes.VK_LEFT, 5);
+                    await BackgroundHelper.SendKey(hWnd, BackgroundHelper.KeyCodes.VK_LEFT, 5);
                 }
 
                 if (!SearchImage.PixelSearch(SearchImage.GetBitmapArea(target, 427, 500, 479, 547), SawColorLeft).IsEmpty && !IsFinished)
                 {
                     await Task.Delay(10);
-                    BackgroundHelper.SendKey(hWnd, BackgroundHelper.KeyCodes.VK_RIGHT, 5);
+                    await BackgroundHelper.SendKey(hWnd, BackgroundHelper.KeyCodes.VK_RIGHT, 5);
                 }
 
                 if (!SearchImage.Find(target, Resources.Score_SawMill, out Scan).IsEmpty)
@@ -61,7 +60,7 @@ namespace UwU_Maker.Minigames
                 if (!SearchImage.Find(target, Resources.Failed_SawMill, out Scan).IsEmpty && !IsFinished)
                 {
                     Console.WriteLine("BOT: " + BotID + "(SawMill): " + " Failed, Retry!");
-                    BackgroundHelper.SendClick(hWnd, Scan.X + 5, Scan.Y + 5, 250);
+                    await BackgroundHelper.SendClick(hWnd, Scan.X + 5, Scan.Y + 5, 250);
                     await Task.Delay(1500);
                     IsFinished = !IsFinished;
                 }
@@ -73,7 +72,7 @@ namespace UwU_Maker.Minigames
                     if (!SearchImage.Find(target, Resources.Reward_Button_SawMill, out Scan).IsEmpty)
                     {
                         Console.WriteLine("BOT: " + BotID + "(SawMill): " + "Click Reward Button!");
-                        BackgroundHelper.SendClick(hWnd, Scan.X + 25, Scan.Y + 15, 250);
+                        await BackgroundHelper.SendClick(hWnd, Scan.X + 25, Scan.Y + 15, 250);
                         await Task.Delay(1000);
                     }
 
@@ -94,7 +93,7 @@ namespace UwU_Maker.Minigames
                         }
                         Times++;
                         Console.WriteLine("BOT: " + BotID + "(SawMill): " + "Click Try Again Button!");
-                        BackgroundHelper.SendClick(hWnd, Scan.X + 20, Scan.Y + 5, 250);
+                        await BackgroundHelper.SendClick(hWnd, Scan.X + 20, Scan.Y + 5, 250);
                         await Task.Delay(1000);
                     }
 
@@ -102,7 +101,7 @@ namespace UwU_Maker.Minigames
                     {
                         Console.WriteLine("BOT: " + BotID + "(SawMill): " + "Click Start Button!");
                         await Task.Delay(500);
-                        BackgroundHelper.SendClick(hWnd, Scan.X + 50, Scan.Y + 30, 250);
+                        await BackgroundHelper.SendClick(hWnd, Scan.X + 50, Scan.Y + 30, 250);
                         await Task.Delay(2000);
                         IsFinished = !IsFinished;
                     }

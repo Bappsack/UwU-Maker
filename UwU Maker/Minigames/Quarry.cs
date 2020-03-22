@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UwU_Maker;
 
 namespace UwU_Maker.Minigames
 {
@@ -56,7 +55,7 @@ namespace UwU_Maker.Minigames
                         await BackgroundHelper.SendKey(hWnd, BackgroundHelper.KeyCodes.VK_RIGHT, 5);
                         await Task.Delay(50);
                     }
- 
+
 
                     if (!SearchImage.Find(target, Resources.Score_Stone, out Scan).IsEmpty)
                     {
@@ -65,10 +64,10 @@ namespace UwU_Maker.Minigames
                         IsFinished = true;
                     }
 
-                    if (!SearchImage.Find(target, Resources.Failed_Stone, out Scan).IsEmpty )
+                    if (!SearchImage.Find(target, Resources.Failed_Stone, out Scan).IsEmpty)
                     {
                         Console.WriteLine("BOT: " + BotID + "(Quarry): " + "Failed, Retry!");
-                        await BackgroundHelper.SendClick(hWnd, 377,435, 250);
+                        await BackgroundHelper.SendClick(hWnd, 377, 435, 250);
                         await Task.Delay(1500);
                         IsFailed = true;
                         IsFinished = true;
@@ -89,7 +88,7 @@ namespace UwU_Maker.Minigames
                     if (!SearchImage.Find(target, Resources.Level5, out Scan).IsEmpty)
                     {
                         Console.WriteLine("BOT: " + BotID + "(Quarry): " + "Click Level 5 Button!");
-                        await BackgroundHelper.SendClick(hWnd, Scan.X +5, Scan.Y +5, 250);
+                        await BackgroundHelper.SendClick(hWnd, Scan.X + 5, Scan.Y + 5, 250);
                         await Task.Delay(500);
                         if (UseRewardCoupon)
                         {
@@ -101,7 +100,7 @@ namespace UwU_Maker.Minigames
                     if (!SearchImage.Find(target, Resources.TryAgain_Stone, out Scan).IsEmpty)
                     {
                         Console.WriteLine("Bot:" + BotID + "(FishPond): Finished! Played: " + Times + "/" + Amount);
-                       
+
                         Console.WriteLine("BOT: " + BotID + "(Quarry): " + "Click Try Again Button!");
                         await BackgroundHelper.SendClick(hWnd, 456, 464, 250);
                         await Task.Delay(1000);

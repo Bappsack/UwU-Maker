@@ -77,7 +77,7 @@ namespace UwU_Maker
         public Form1()
         {
 
-          
+
             InitializeComponent();
             if (!Properties.Settings.Default.Disclaimer)
             {
@@ -155,8 +155,8 @@ namespace UwU_Maker
             string BotID = listBox1.SelectedItem.ToString().Replace("NosTale", "").Replace("- (", "").Replace(")", "");
             string Title = listBox1.SelectedItem.ToString();
             int Amount = Convert.ToInt32(textBox1.Text);
-
-            if ((int)Game == 1) { BotList.Add(new Thread(() => new Minigames.FishPond().RunTask(FindWindow("TNosTaleMainF", Title), Amount, rect, Convert.ToInt32(BotID), checkBox1.Checked, checkBox2.Checked, Convert.ToInt32(textBox2.Text), Convert.ToInt32(textBox3.Text), Convert.ToDouble("0." + textBox4.Text)))); }
+            int Level = Convert.ToInt32(comboBox1.Text);
+            if ((int)Game == 1) { BotList.Add(new Thread(() => new Minigames.FishPond().RunTask(FindWindow("TNosTaleMainF", Title), Amount,Level, rect, Convert.ToInt32(BotID), checkBox1.Checked, checkBox2.Checked, Convert.ToInt32(textBox2.Text), Convert.ToInt32(textBox3.Text), Convert.ToDouble("0." + textBox4.Text),Convert.ToInt32(textBox5.Text)))); }
             if ((int)Game == 2) { BotList.Add(new Thread(() => new Minigames.SawMill().RunTask(FindWindow("TNosTaleMainF", Title), Amount, rect, Convert.ToInt32(BotID), checkBox1.Checked))); }
             if ((int)Game == 3) { BotList.Add(new Thread(() => new Minigames.Quarry().RunTask(FindWindow("TNosTaleMainF", Title), Amount, rect, Convert.ToInt32(BotID), checkBox1.Checked))); }
             //if ((int)Game == 4) { BotList.Add(new Thread(() => new Minigames.ShootingField().RunTask(FindWindow("TNosTaleMainF",Title), Amount, rect, Convert.ToInt32(BotID), checkBox1.Checked))); }
@@ -228,7 +228,7 @@ namespace UwU_Maker
                 return;
             }
 
-            if(IsStarted)
+            if (IsStarted)
             {
                 MessageBox.Show("Already Started!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UwU_Maker
 {
@@ -23,7 +19,7 @@ namespace UwU_Maker
 
         public static void ToggleSleepMode(bool Toggle)
         {
-            if(Toggle)
+            if (Toggle)
             {
                 SetThreadExecutionState(ExecutionState.EsContinuous | ExecutionState.EsSystemRequired);
             }
@@ -33,6 +29,6 @@ namespace UwU_Maker
             }
         }
 
-     
+
     }
 }
