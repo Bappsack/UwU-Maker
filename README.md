@@ -1,5 +1,7 @@
 # UwU-Maker
 
+development stopped, postponed to https://github.com/Bappsack/OwO-Maker
+
 ### Disclaimer:
 
 This Project was creating for learning purpose, it might not work on any machine and could be alot better code-wise!
